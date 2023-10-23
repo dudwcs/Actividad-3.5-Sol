@@ -16,6 +16,7 @@
             <select name="operacion" id="operacion" required>
                 <option value="1">Suma</option>
                 <option value="2">Producto</option>
+                
             </select>
         </p>
 
