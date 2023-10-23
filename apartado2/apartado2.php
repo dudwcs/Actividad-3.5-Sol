@@ -5,7 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla</title>
-    <link rel="stylesheet" href="estilos.css">
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,11 +41,11 @@
     </form>
 
     <?php
-    require_once 'util'.DIRECTORY_SEPARATOR. 'util.php';
+    require_once 'util' . DIRECTORY_SEPARATOR . 'util.php';
     const MIN_CELL_VALUE = 0;
     const MAX_CELL_VALUE = 10;
 
-    if (isset($_GET["filas"]) && isset($_GET["cols"])) {
+    if (isset($_GET["filas"], $_GET["cols"])) {
         $filas = $_GET["filas"];
         $cols = $_GET["cols"];
         // var_dump($filas);
@@ -46,15 +54,14 @@
         echo "<p> El número de columnas es: $cols</p>";
         echo "<p> El número de filas es: $filas</p>";
 
-       // mostrar_tabla($filas, $cols);
-       $array_creado = crear_array($filas, $cols);
-       mostrar_array_tabla($array_creado);
-      
+        mostrar_tabla($filas, $cols);
+        $array_creado = crear_array($filas, $cols);
+        mostrar_array_tabla($array_creado);
     }
 
-   
 
-   
+
+
     ?>
 </body>
 
